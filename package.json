@@ -1,0 +1,19 @@
+{
+  "name": "mcs-login",
+  "version": "0.0.1",
+  "description": "The mcs-login modules provides the login.",
+  "keywords": ["stellar", "mcs"],
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Stellar Development Foundation <stellar@stellar.org>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/stellar/mcs-login.git"
+  },
+  "dependencies": {
+    "mcs-core": "git+https://github.com/stellar/mcs-core.git#master",
+    "stellar-wallet-js-sdk": "git+https://github.com/stellar/stellar-wallet-js-sdk.git#master"
+  }
+}
