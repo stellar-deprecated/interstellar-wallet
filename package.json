@@ -6,8 +6,16 @@
   "scripts": {
     "test": "gulp test"
   },
+  "mcs": {
+    "widgets": {
+      "main": {
+        "template": "widget.template.html",
+        "type": "login"
+      }
+    }
+  },
   "author": "Stellar Development Foundation <stellar@stellar.org>",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/stellar/mcs-login.git"
