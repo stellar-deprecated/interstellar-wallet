@@ -1,5 +1,7 @@
 let StellarWallet = require('stellar-wallet-js-sdk');
 
+require('../styles/form-widget.scss');
+
 export class LoginController {
   constructor(config, sessions, $state, $scope) {
     this.config   = config;
