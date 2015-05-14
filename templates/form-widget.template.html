@@ -1,29 +1,3 @@
-<div class="container">
-    <form ng-submit="login.submit()">
-        <div ng-if="login.error">
-            {{ login.error }}
-        </div>
-        <div class="form-group">
-            <label>Username</label>
-            <input ng-model="login.username" type="text" class="form-control" placeholder="Your username">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input ng-model="login.password" type="password" class="form-control" placeholder="Your password" autocomplete="off" />
-        </div>
-        <div class="form-group" ng-show="login.totpRequired">
-            <label>2-Factor Authentication Code</label>
-            <input ng-model="login.totpCode" type="text" class="form-control" maxlength="6" autocomplete="off" />
-        </div>
-        <div class="form-group">
-        <input ng-model="login.permanent" type="checkbox" /> Remember me
-        </div>
-        <button type="submit" class="btn btn-block btn-primary">Login</button>
-    </form>
-</div>
-<hr>
-
-<h2>Mobile first:</h2>
 <form ng-submit="login.submit()">
   <div ng-if="login.error">
     {{ login.error }}
@@ -31,7 +5,7 @@
 
   <label class="k-inputGroup mcs-login-inputGroup">
     <span class="k-inputGroup__item mcs-login-inputGroup__label">Username</span>
-    <input class="k-inputGroup__item mcs-login-inputGroup__input" ng-model="login.username" type="text">
+    <input class="k-inputGroup__item mcs-login-inputGroup__input" ng-model="login.username" type="text" ng-blur="login.onChangeUsername()">
   </label>
   <label class="k-inputGroup mcs-login-inputGroup">
     <span class="k-inputGroup__item mcs-login-inputGroup__label">Password</span>
@@ -46,29 +20,6 @@
       <input ng-model="login.permanent" type="checkbox" />
     </span>
     <span class="k-inputGroup__item">Remember me</span>
-  </label>
-  <button type="submit" class="k-button">Login</button>
-</form>
-
-<hr>
-<h2>r-medium (>640px)</h2>
-<!-- this .r-media-medium is for demonstration purposes only -->
-<form class="r-media-medium" ng-submit="login.submit()">
-  <div ng-if="login.error">
-    {{ login.error }}
-  </div>
-
-  <label class="k-inputGroup mcs-login-inputGroup">
-    <span class="k-inputGroup__item mcs-login-inputGroup__label">Username</span>
-    <input class="k-inputGroup__item mcs-login-inputGroup__input" ng-model="login.username" type="text">
-  </label>
-  <label class="k-inputGroup mcs-login-inputGroup">
-    <span class="k-inputGroup__item mcs-login-inputGroup__label">Password</span>
-    <input class="k-inputGroup__item mcs-login-inputGroup__input" ng-model="login.password" type="password" autocomplete="off">
-  </label>
-  <label class="k-inputGroup mcs-login-inputGroup" ng-show="login.totpRequired">
-    <span class="k-inputGroup__item mcs-login-inputGroup__label">2-Factor Authentication Code</span>
-    <input class="k-inputGroup__item mcs-login-inputGroup__input" ng-model="login.totpCode" type="text" maxlength="6" autocomplete="off" />
   </label>
   <button type="submit" class="k-button">Login</button>
 </form>
