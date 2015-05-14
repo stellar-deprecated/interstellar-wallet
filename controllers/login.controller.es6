@@ -1,30 +1,49 @@
 let StellarWallet = require('stellar-wallet-js-sdk');
+import {Intent} from 'mcs-core';
 
 require('../styles/form-widget.scss');
 
 export class LoginController {
-  constructor(config, sessions, $state, $scope) {
-    this.config   = config;
-    this.sessions = sessions;
-    this.$state   = $state;
-    this.$scope   = $scope;
-    this.successfulLoginRoute = 'dashboard';
+  constructor(Config, IntentBroadcast, Sessions, $http, $scope) {
+    this.Config = Config;
+    this.IntentBroadcast = IntentBroadcast;
+    this.Sessions = Sessions;
+    this.$http = $http;
+    this.$scope = $scope;
 
-    if (this.sessions.hasDefault()) {
-      this.$state.go(this.successfulLoginRoute);
+    if (this.Sessions.hasDefault()) {
+      this.broadcastShowDashboardIntent();
     }
   }
 
+  broadcastShowDashboardIntent() {
+    this.IntentBroadcast.sendBroadcast(
+      new Intent(
+        Intent.TYPES.SHOW_DASHBOARD
+      )
+    );
+  }
+
   submit() {
+    this.error = null;
+
     if (!this.username) {
       this.username = '';
     }
 
+    if (!this.password) {
+      this.password = '';
+    }
+
     let params = {
-      server: 'http://localhost:3000/v2',
-      username: this.username.toLowerCase(),
+      server: 'https://wallet.stellar.org/v2',
+      username: this.username.toLowerCase()+'@stellar.org',
       password: this.password
     };
+
+    if (this.totpRequired) {
+      params.totpCode = this.totpCode;
+    }
 
     return StellarWallet.getWallet(params)
       .then(wallet => this.onSuccessfulLogin.call(this, wallet))
@@ -49,14 +68,42 @@ export class LoginController {
       })
   };
 
+  onChangeUsername() {
+    if (!this.username) {
+      return;
+    }
+
+    this.$http.post('https://wallet.stellar.org/v2/wallets/show_login_params', {
+        username: this.username.toLowerCase()+'@stellar.org'
+      }).success(response => {
+        this.totpRequired = response.totpRequired;
+      }).error((body, status) => {
+        switch(status) {
+          case 404:
+            this.totpRequired = false;
+            break;
+          case 0:
+            this.onError('Unable to contact the server.');
+            break;
+          default:
+            this.onError('An error occurred.');
+        }
+      });
+  }
+
   onSuccessfulLogin(wallet) {
     let mainData = JSON.parse(wallet.getMainData());
     let data = JSON.parse(wallet.getKeychainData());
     let secret = data.signingKeys.secret;
-    data.username = mainData.username;
+    //let address = data.signingKeys.address;
+    let address = StellarWallet.util.generateKeyPair(secret).newAddress;
+
+    let username = mainData.username;
     let permanent = this.permanent;
-    this.sessions.createDefault({secret, data, permanent});
-    this.$state.go(this.successfulLoginRoute);
+    this.Sessions.createDefault({username, address, secret, data, permanent})
+      .then(() => {
+        this.broadcastShowDashboardIntent();
+      })
   }
 
   onError(userMessage, error) {
