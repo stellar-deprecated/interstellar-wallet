@@ -5,11 +5,11 @@ require('../styles/form-widget.scss');
 
 export class LoginController {
   constructor(Config, IntentBroadcast, Sessions, $http, $scope) {
-    this.Config = Config;
     this.IntentBroadcast = IntentBroadcast;
     this.Sessions = Sessions;
     this.$http = $http;
     this.$scope = $scope;
+    this.server = Config.get('modules.mcs-login.server');
 
     if (this.Sessions.hasDefault()) {
       this.broadcastShowDashboardIntent();
@@ -36,7 +36,7 @@ export class LoginController {
     }
 
     let params = {
-      server: 'https://wallet.stellar.org/v2',
+      server: `${this.server}/v2`,
       username: this.username.toLowerCase()+'@stellar.org',
       password: this.password
     };
@@ -73,7 +73,7 @@ export class LoginController {
       return;
     }
 
-    this.$http.post('https://wallet.stellar.org/v2/wallets/show_login_params', {
+    this.$http.post(`${this.server}/v2/wallets/show_login_params`, {
         username: this.username.toLowerCase()+'@stellar.org'
       }).success(response => {
         this.totpRequired = response.totpRequired;

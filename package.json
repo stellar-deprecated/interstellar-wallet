@@ -1,7 +1,8 @@
 {
   "name": "mcs-login",
   "version": "0.0.1",
-  "description": "The mcs-login modules provides the login.",
+  "private": true,
+  "description": "The mcs-stellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
   "keywords": ["stellar", "mcs"],
   "scripts": {
     "test": "gulp test"
