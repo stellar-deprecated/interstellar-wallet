@@ -2,7 +2,8 @@ import { Module } from "mcs-core";
 
 export { LoginController } from "./controllers/login.controller.es6";
 
-export const mod = new Module('mcs-login');
+const mod = new Module('mcs-login');
+export default mod;
 mod.templates  = require.context("raw!./templates", true);
 mod.directives = require.context("./directives", true);
 
