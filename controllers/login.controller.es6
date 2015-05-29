@@ -1,15 +1,18 @@
-let StellarWallet = require('stellar-wallet-js-sdk');
-import {Intent} from 'mcs-core';
+import StellarWallet from 'stellar-wallet-js-sdk';
+import {Inject, Intent} from 'mcs-core';
 
 require('../styles/form-widget.scss');
 
-export class LoginController {
+@Inject("mcs-core.Config", "mcs-core.IntentBroadcast", "mcs-stellard.Sessions", "$http", "$scope")
+class LoginController {
   constructor(Config, IntentBroadcast, Sessions, $http, $scope) {
     this.IntentBroadcast = IntentBroadcast;
     this.Sessions = Sessions;
     this.$http = $http;
     this.$scope = $scope;
     this.server = Config.get('modules.mcs-login.server');
+
+    this.submitting = false;
 
     if (this.Sessions.hasDefault()) {
       this.broadcastShowDashboardIntent();
@@ -26,6 +29,7 @@ export class LoginController {
 
   submit() {
     this.error = null;
+    this.submitting = true;
 
     if (!this.username) {
       this.username = '';
@@ -64,6 +68,7 @@ export class LoginController {
         throw e;
       })
       .finally(() => {
+        this.submitting = false;
         this.$scope.$apply();
       })
   };
@@ -110,3 +115,8 @@ export class LoginController {
     this.error = userMessage;
   }
 }
+
+module.exports = function(mod) {
+  mod.controller("LoginController", LoginController);
+};
+

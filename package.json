@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "mcs-core": "git+https://github.com/stellar/mcs-core.git#master",
+    "mcs-stellard": "git+https://github.com/stellar/mcs-stellard.git#master",
     "stellar-wallet-js-sdk": "git+https://github.com/stellar/stellar-wallet-js-sdk.git#master"
   }
 }

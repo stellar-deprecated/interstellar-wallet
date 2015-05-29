@@ -1,9 +1,12 @@
-import { Module } from "mcs-core";
-
-export { LoginController } from "./controllers/login.controller.es6";
+import {Module} from "mcs-core";
+import mcsStellard from 'mcs-stellard';
 
 const mod = new Module('mcs-login');
 export default mod;
+
+mod.use(mcsStellard);
+
+mod.controllers = require.context("./controllers",   true);
 mod.templates  = require.context("raw!./templates", true);
 mod.directives = require.context("./directives", true);
 

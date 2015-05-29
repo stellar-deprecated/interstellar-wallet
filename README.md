@@ -11,10 +11,20 @@ The `mcs-stellar-wallet` is part of the Modular Client System.
 
 The `mcs-stellar-wallet` module provides controllers and widgets responsible for login using [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
 
+## Default configuration
+
+```json
+{
+  "server": "https://wallet.stellar.org"
+}
+```
+
+Read more about [modules configuration](https://github.com/stellar/mcs-core#mcs-coreconfig-service).
+
 ## Module contents
 
 #### Classes
-* [`LoginController`](#logincontroller-class)
+None.
 
 #### Services
 None.
@@ -22,9 +32,6 @@ None.
 #### Widgets
 * [`<mcs-stellar-wallet-login-form>`](#mcs-stellar-wallet-login-form-widget)
 
-## `LoginController` class
-
-`LoginController` is extendable class that supports login to [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server. Default implementation creates default `Session` using [`mcs-session`](https://github.com/stellar/mcs-session) and sends `SHOW_DASHBOARD` [Intent](https://github.com/stellar/mcs-core#intent-class) after successful login, however a developer can extend `onSuccessfulLogin(wallet)` (`wallet` is stellar-wallet-js-sdk [`Wallet`](https://github.com/stellar/stellar-wallet-js-sdk#wallet-object) object) method with custom implementation.
 
 ## `<mcs-stellar-wallet-login-form>` widget
 
