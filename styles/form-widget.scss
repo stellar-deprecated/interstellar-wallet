@@ -1,6 +1,6 @@
 .mcs-login-form {
-  padding: $k-spacing-widgetPadding;
+  padding: $s-spacing-widgetPadding;
 }
 .mcs-login-form-inputGroup__label {
-  @include K-flexItem-full;
+  @include S-flexItem-full;
 }
