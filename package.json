@@ -1,8 +1,8 @@
 {
-  "name": "interstellar-stellar-wallet",
+  "name": "interstellar-wallet",
   "version": "0.0.1",
   "private": true,
-  "description": "The interstellar-stellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
+  "description": "The interstellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
   "keywords": ["stellar", "interstellar"],
   "scripts": {
     "test": "gulp test"
@@ -11,7 +11,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "http://github.com/stellar/interstellar-stellar-wallet.git"
+    "url": "http://github.com/stellar/interstellar-wallet.git"
   },
   "dependencies": {
     "interstellar-core": "^0.0.1",

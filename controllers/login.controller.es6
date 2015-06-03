@@ -10,7 +10,7 @@ class LoginController {
     this.Sessions = Sessions;
     this.$http = $http;
     this.$scope = $scope;
-    this.server = Config.get('modules.interstellar-stellar-wallet.server');
+    this.server = Config.get('modules.interstellar-wallet.server');
 
     this.submitting = false;
 

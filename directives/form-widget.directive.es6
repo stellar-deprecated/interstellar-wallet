@@ -2,7 +2,7 @@ let formWidget = function () {
   return {
     restrict: "E",
     transclude: true,
-    templateUrl: "interstellar-stellar-wallet/form-widget"
+    templateUrl: "interstellar-wallet/form-widget"
   }
 };
 

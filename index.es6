@@ -1,7 +1,7 @@
 import {Module} from "interstellar-core";
 import interstellarSessions from 'interstellar-sessions';
 
-const mod = new Module('interstellar-stellar-wallet');
+const mod = new Module('interstellar-wallet');
 export default mod;
 
 mod.use(interstellarSessions);

@@ -1,7 +1,7 @@
-`interstellar-stellar-wallet`
+`interstellar-wallet`
 =============
 
-The `interstellar-stellar-wallet` is part of the Modular Client System.
+The `interstellar-wallet` is part of the Modular Client System.
 
 > Quick start to developing in the Interstellar eco-system:
 >
@@ -10,7 +10,7 @@ The `interstellar-stellar-wallet` is part of the Modular Client System.
 > * Read the technical overview of the system.
 > * Contribute to our open-source modules or develop your own.
 
-The `interstellar-stellar-wallet` module provides controllers and widgets responsible for login using [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
+The `interstellar-wallet` module provides controllers and widgets responsible for login using [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
 
 ## Default configuration
 
@@ -31,10 +31,10 @@ None.
 None.
 
 #### Widgets
-* [`<interstellar-stellar-wallet-login-form>`](#interstellar-stellar-wallet-login-form-widget)
+* [`<interstellar-wallet-login-form>`](#interstellar-wallet-login-form-widget)
 
 
-## `<interstellar-stellar-wallet-login-form>` widget
+## `<interstellar-wallet-login-form>` widget
 
 TODO - screenshot
 
