@@ -1,29 +1,21 @@
 {
-  "name": "mcs-login",
+  "name": "interstellar-stellar-wallet",
   "version": "0.0.1",
   "private": true,
-  "description": "The mcs-stellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
-  "keywords": ["stellar", "mcs"],
+  "description": "The interstellar-stellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
+  "keywords": ["stellar", "interstellar"],
   "scripts": {
     "test": "gulp test"
-  },
-  "mcs": {
-    "widgets": {
-      "main": {
-        "template": "widget.template.html",
-        "type": "login"
-      }
-    }
   },
   "author": "Stellar Development Foundation <stellar@stellar.org>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "http://github.com/stellar/mcs-login.git"
+    "url": "http://github.com/stellar/interstellar-stellar-wallet.git"
   },
   "dependencies": {
-    "mcs-core": "git+https://github.com/stellar/mcs-core.git#master",
-    "mcs-stellard": "git+https://github.com/stellar/mcs-stellard.git#master",
+    "interstellar-core": "^0.0.1",
+    "interstellar-sessions": "^0.0.1",
     "stellar-wallet-js-sdk": "git+https://github.com/stellar/stellar-wallet-js-sdk.git#master"
   }
 }

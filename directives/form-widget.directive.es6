@@ -2,7 +2,7 @@ let formWidget = function () {
   return {
     restrict: "E",
     transclude: true,
-    templateUrl: "mcs-login/form-widget"
+    templateUrl: "interstellar-stellar-wallet/form-widget"
   }
 };
 

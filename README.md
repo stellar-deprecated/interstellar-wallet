@@ -1,15 +1,16 @@
-`mcs-stellar-wallet`
+`interstellar-stellar-wallet`
 =============
 
-The `mcs-stellar-wallet` is part of the Modular Client System.
+The `interstellar-stellar-wallet` is part of the Modular Client System.
 
-> Quick start to developing in the MCS eco-system:
+> Quick start to developing in the Interstellar eco-system:
 >
-> * Install [`mcs-workspace`](https://github.com/stellar/mcs-workspace).
+> * Read [`Getting started`](https://github.com/stellar/interstellar/tree/master/docs) doc.
+> * Install [`interstellar-workspace`](https://github.com/stellar/interstellar-workspace).
 > * Read the technical overview of the system.
 > * Contribute to our open-source modules or develop your own.
 
-The `mcs-stellar-wallet` module provides controllers and widgets responsible for login using [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
+The `interstellar-stellar-wallet` module provides controllers and widgets responsible for login using [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
 
 ## Default configuration
 
@@ -19,7 +20,7 @@ The `mcs-stellar-wallet` module provides controllers and widgets responsible for
 }
 ```
 
-Read more about [modules configuration](https://github.com/stellar/mcs-core#mcs-coreconfig-service).
+Read more about [modules configuration](https://github.com/stellar/interstellar-core#interstellar-coreconfig-service).
 
 ## Module contents
 
@@ -30,10 +31,10 @@ None.
 None.
 
 #### Widgets
-* [`<mcs-stellar-wallet-login-form>`](#mcs-stellar-wallet-login-form-widget)
+* [`<interstellar-stellar-wallet-login-form>`](#interstellar-stellar-wallet-login-form-widget)
 
 
-## `<mcs-stellar-wallet-login-form>` widget
+## `<interstellar-stellar-wallet-login-form>` widget
 
 TODO - screenshot
 

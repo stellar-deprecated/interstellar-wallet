@@ -1,16 +1,16 @@
 import StellarWallet from 'stellar-wallet-js-sdk';
-import {Inject, Intent} from 'mcs-core';
+import {Inject, Intent} from 'interstellar-core';
 
 require('../styles/form-widget.scss');
 
-@Inject("mcs-core.Config", "mcs-core.IntentBroadcast", "mcs-stellard.Sessions", "$http", "$scope")
+@Inject("interstellar-core.Config", "interstellar-core.IntentBroadcast", "interstellar-sessions.Sessions", "$http", "$scope")
 class LoginController {
   constructor(Config, IntentBroadcast, Sessions, $http, $scope) {
     this.IntentBroadcast = IntentBroadcast;
     this.Sessions = Sessions;
     this.$http = $http;
     this.$scope = $scope;
-    this.server = Config.get('modules.mcs-login.server');
+    this.server = Config.get('modules.interstellar-stellar-wallet.server');
 
     this.submitting = false;
 
