@@ -1,16 +1,15 @@
 `interstellar-wallet`
 =============
 
-The `interstellar-wallet` is part of the Modular Client System.
+The `interstellar-wallet` module is part of the [Interstellar Module System](https://github.com/stellar/interstellar).
+
+It provides controllers and widgets communicating with the [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
 
 > Quick start to developing in the Interstellar eco-system:
 >
 > * Read [`Getting started`](https://github.com/stellar/interstellar/tree/master/docs) doc.
 > * Install [`interstellar-workspace`](https://github.com/stellar/interstellar-workspace).
-> * Read the technical overview of the system.
-> * Contribute to our open-source modules or develop your own.
-
-The `interstellar-wallet` module provides controllers and widgets responsible for login using [`stellar-wallet`](https://github.com/stellar/stellar-wallet) server.
+> * Contribute to our [open-source modules](https://github.com/stellar/interstellar/blob/master/docs/module-list.md) or develop your own.
 
 ## Default configuration
 
