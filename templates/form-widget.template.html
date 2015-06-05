@@ -1,21 +1,21 @@
-<form class="mcs-login-form" ng-controller="interstellar-wallet.LoginController as login" ng-submit="login.submit()">
+<form class="ims-wallet-login-form" ng-controller="interstellar-wallet.LoginController as login" ng-submit="login.submit()">
   <div ng-if="login.error">
     {{ login.error }}
   </div>
 
-  <label class="s-inputGroup mcs-login-inputGroup">
-    <span class="s-inputGroup__item mcs-login-form-inputGroup__label">Username</span>
-    <input class="s-inputGroup__item mcs-login-form-inputGroup__input" ng-model="login.username" type="text" ng-blur="login.onChangeUsername()" ng-disabled="login.submitting">
+  <label class="s-inputGroup ims-wallet-login-form-inputGroup">
+    <span class="s-inputGroup__item ims-wallet-login-form-inputGroup__label">Username</span>
+    <input class="s-inputGroup__item ims-wallet-login-form-inputGroup__input" ng-model="login.username" type="text" ng-blur="login.onChangeUsername()" ng-disabled="login.submitting">
   </label>
-  <label class="s-inputGroup mcs-login-form-inputGroup">
-    <span class="s-inputGroup__item mcs-login-form-inputGroup__label">Password</span>
-    <input class="s-inputGroup__item mcs-login-form-item" ng-model="login.password" type="password" autocomplete="off" ng-disabled="login.submitting">
+  <label class="s-inputGroup ims-wallet-login-form-inputGroup">
+    <span class="s-inputGroup__item ims-wallet-login-form-inputGroup__label">Password</span>
+    <input class="s-inputGroup__item ims-wallet-login-form-item" ng-model="login.password" type="password" autocomplete="off" ng-disabled="login.submitting">
   </label>
-  <label class="s-inputGroup mcs-login-form-inputGroup" ng-show="login.totpRequired">
-    <span class="s-inputGroup__item mcs-login-form-inputGroup__label">2-Factor Authentication Code</span>
-    <input class="s-inputGroup__item mcs-login-form-item" ng-model="login.totpCode" type="text" maxlength="6" autocomplete="off" ng-disabled="login.submitting">
+  <label class="s-inputGroup ims-wallet-login-form-inputGroup" ng-show="login.totpRequired">
+    <span class="s-inputGroup__item ims-wallet-login-form-inputGroup__label">2-Factor Authentication Code</span>
+    <input class="s-inputGroup__item ims-wallet-login-form-item" ng-model="login.totpCode" type="text" maxlength="6" autocomplete="off" ng-disabled="login.submitting">
   </label>
-  <label class="s-inputGroup mcs-login-form-inputGroup">
+  <label class="s-inputGroup ims-wallet-login-form-inputGroup">
     <span class="s-inputGroup__item s-inputGroup__item--tagFlat s-inputGroup__item--addon S-flexItem-none">
       <input ng-model="login.permanent" type="checkbox" ng-disabled="login.submitting" />
     </span>
@@ -23,3 +23,5 @@
   </label>
   <button type="submit" class="s-button" ng-disabled="login.submitting">Login</button>
 </form>
+
+<p class="ims-wallet-login-form-link"><a href="https://www.stellar.org/galaxy/#friendbot">Get a test account</a></p>

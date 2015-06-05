@@ -1,6 +1,10 @@
-.mcs-login-form {
+.ims-wallet-login-form {
   padding: $s-spacing-widgetPadding;
 }
-.mcs-login-form-inputGroup__label {
+.ims-wallet-login-form-inputGroup__label {
   @include S-flexItem-full;
+}
+
+.ims-wallet-login-form-link {
+	text-align: center;
 }
