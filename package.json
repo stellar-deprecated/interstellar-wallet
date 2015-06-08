@@ -1,7 +1,6 @@
 {
   "name": "interstellar-wallet",
   "version": "0.0.1",
-  "private": true,
   "description": "The interstellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
   "keywords": ["stellar", "interstellar"],
   "scripts": {
