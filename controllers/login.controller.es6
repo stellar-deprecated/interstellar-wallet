@@ -1,10 +1,11 @@
 import StellarWallet from 'stellar-wallet-js-sdk';
-import {Inject, Intent} from 'interstellar-core';
+import {Inject, Intent, Widget} from 'interstellar-core';
 
 require('../styles/form-widget.scss');
 
+@Widget('form', 'LoginController', 'interstellar-wallet/form-widget')
 @Inject("interstellar-core.Config", "interstellar-core.IntentBroadcast", "interstellar-sessions.Sessions", "$http", "$scope")
-class LoginController {
+export default class LoginController {
   constructor(Config, IntentBroadcast, Sessions, $http, $scope) {
     this.IntentBroadcast = IntentBroadcast;
     this.Sessions = Sessions;
@@ -49,8 +50,12 @@ class LoginController {
       params.totpCode = this.totpCode;
     }
 
+    let success = false;
     return StellarWallet.getWallet(params)
-      .then(wallet => this.onSuccessfulLogin.call(this, wallet))
+      .then(wallet => {
+        success = true;
+        return this.onSuccessfulLogin.call(this, wallet)
+      })
       .catch(StellarWallet.errors.TotpCodeRequired, e => {
         this.totpRequired = true;
         this.onError("2-Factor-Authentication code is required to login.", e);
@@ -68,7 +73,9 @@ class LoginController {
         throw e;
       })
       .finally(() => {
-        this.submitting = false;
+        if (!success) {
+          this.submitting = false;
+        }
         this.$scope.$apply();
       })
   };
@@ -115,8 +122,3 @@ class LoginController {
     this.error = userMessage;
   }
 }
-
-module.exports = function(mod) {
-  mod.controller("LoginController", LoginController);
-};
-

@@ -1,14 +1,15 @@
 import {Module} from "interstellar-core";
 import interstellarSessions from 'interstellar-sessions';
+import angularQR from './lib/angular-qr';
 
 const mod = new Module('interstellar-wallet');
 export default mod;
 
 mod.use(interstellarSessions);
+mod.use(angularQR);
 
 mod.controllers = require.context("./controllers",   true);
 mod.templates   = require.context("raw!./templates", true);
-mod.directives  = require.context("./directives", true);
 
 let addConfig = ConfigProvider => {
   ConfigProvider.addModuleConfig(mod.name, {
