@@ -1,8 +1,11 @@
 {
   "name": "interstellar-wallet",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The interstellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
-  "keywords": ["stellar", "interstellar"],
+  "keywords": [
+    "stellar",
+    "interstellar"
+  ],
   "scripts": {
     "test": "gulp test",
     "postversion": "git push && git push --tags"
