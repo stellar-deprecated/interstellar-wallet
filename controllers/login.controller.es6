@@ -1,4 +1,5 @@
 import StellarWallet from 'stellar-wallet-js-sdk';
+import {Keypair} from 'stellar-base';
 import {Inject, Intent, Widget} from 'interstellar-core';
 
 require('../styles/form-widget.scss');
@@ -106,9 +107,9 @@ export default class LoginController {
   onSuccessfulLogin(wallet) {
     let mainData = JSON.parse(wallet.getMainData());
     let data = JSON.parse(wallet.getKeychainData());
-    let secret = data.signingKeys.secret;
-    //let address = data.signingKeys.address;
-    let address = StellarWallet.util.generateKeyPair(secret).newAddress;
+    let keypair = Keypair.fromBase58Seed(data.signingKeys.secret);
+    let address = keypair.address();
+    let secret  = keypair.seed();
 
     let username = mainData.username;
     let permanent = this.permanent;

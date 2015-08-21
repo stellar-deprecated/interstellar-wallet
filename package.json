@@ -4,7 +4,8 @@
   "description": "The interstellar-wallet module provides controllers and widgets responsible for login using stellar-wallet server.",
   "keywords": ["stellar", "interstellar"],
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "postversion": "git push && git push --tags"
   },
   "author": "Stellar Development Foundation <stellar@stellar.org>",
   "license": "Apache-2.0",
@@ -15,6 +16,7 @@
   "dependencies": {
     "interstellar-core": "^0.0.1",
     "interstellar-sessions": "^0.0.1",
+    "stellar-base": "^0.3.4",
     "stellar-wallet-js-sdk": "git+https://github.com/stellar/stellar-wallet-js-sdk.git#master"
   }
 }
