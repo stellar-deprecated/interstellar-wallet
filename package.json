@@ -19,7 +19,7 @@
   "dependencies": {
     "interstellar-core": "~0.0.3",
     "interstellar-sessions": "~0.0.5",
-    "stellar-base": "^0.3.4",
+    "stellar-base": "~0.3.4",
     "stellar-wallet-js-sdk": "git+https://github.com/stellar/stellar-wallet-js-sdk.git#master"
   }
 }
